@@ -1,4 +1,5 @@
 import React from 'react';
+import { CacheProvider } from 'rest-hooks'
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -6,7 +7,9 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CacheProvider>
+      <App />
+    </CacheProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
