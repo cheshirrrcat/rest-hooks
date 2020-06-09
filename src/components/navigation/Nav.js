@@ -5,6 +5,7 @@ const MyComponent = () => {
   return (
     <div>
       <Link to="/">Home</Link>&nbsp;&nbsp;&nbsp;
+      <Link to="/create">Create</Link>&nbsp;&nbsp;&nbsp;
       <Link to="/contacts">Contacts</Link>
     </div>
   );

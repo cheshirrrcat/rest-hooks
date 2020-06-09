@@ -25,6 +25,17 @@ export default class EmployeeResource extends Resource {
     };
   }
   
+  static listUrl(searchParams) {
+    if (searchParams && Object.keys(searchParams).length) {
+      const { ...realSearchParams } = searchParams;
+      const params = new URLSearchParams(realSearchParams);
+      // this is essential for consistent url strings
+      params.sort();
+      return `https://reqres.in/api/users/?${params.toString()}`;
+    }
+    return 'https://reqres.in/api/users/';
+  }
+  
   static url(urlParams) {
     if (urlParams) {
       return `https://reqres.in/api/users/${urlParams.id}`;

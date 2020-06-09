@@ -5,6 +5,7 @@ import EmployeeList from './pages/EmployeeList';
 import EmployeeDetail from './pages/EmployeeDetail';
 import Contacts from './pages/Contacts';
 import Nav from './components/navigation/Nav';
+import EmployeeCreate from './pages/EmployeeCreate';
 
 const App = () => (
   <div>
@@ -16,6 +17,8 @@ const App = () => (
           <Switch>
             <Route exact path="/" component={EmployeeList} />
             <Route path="/employee/:id" component={EmployeeDetail} />
+            {/*<Route path="/employee/create" component={EmployeeCreate} />*/}
+            <Route path="/create" component={EmployeeCreate} />
             <Route path="/contacts" component={Contacts} />
           </Switch>
         </Router>
