@@ -1,11 +1,11 @@
 import { Resource } from 'rest-hooks';
 
-export default class ArticleResource extends Resource {
+export default class EmployeeResource extends Resource {
   id = undefined;
-  employee_name = '';
-  employee_salary = '';
-  employee_age = '';
-  profile_image = '';
+  first_name = '';
+  last_name = '';
+  email = '';
+  avatar = '';
 
   pk() {
     return this.id?.toString();
@@ -25,5 +25,12 @@ export default class ArticleResource extends Resource {
     };
   }
   
-  static urlRoot = 'http://dummy.restapiexample.com/api/v1/employees';
+  static url(urlParams) {
+    if (urlParams) {
+      return `https://reqres.in/api/users/${urlParams.id}`;
+    }
+    return this.urlRoot;
+  }
+  
+  static urlRoot = 'https://reqres.in/api/users';
 }
